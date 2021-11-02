@@ -37,3 +37,7 @@ input NewBookInput {
   price: Int!
   author: String!
 }
+
+type Subscription {
+  bookCreated: Book!
+}
