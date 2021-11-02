@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 /* entities */
-import { Book } from './entities/book';
+import { Book } from './entities/book.entity';
 /* dto */
 import { NewBookInput } from './dto/newBook.input';
 
@@ -40,11 +40,11 @@ export class BooksService {
   }
 
   create(data: NewBookInput): Promise<Book> {
-    const book: Book = {
+    const book = {
       ...data,
       id: Date.now(),
       createdAt: new Date(),
-    };
+    } as Book;
     books.push(book);
 
     return Promise.resolve(book);

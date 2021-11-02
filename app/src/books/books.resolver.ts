@@ -3,7 +3,7 @@ import { Args, Int, Mutation, Query, Resolver } from '@nestjs/graphql';
 /* services */
 import { BooksService } from './books.service';
 /* entities */
-import { Book } from './entities/book';
+import { Book } from './entities/book.entity';
 /* dto */
 import { NewBookInput } from './dto/newBook.input';
 
