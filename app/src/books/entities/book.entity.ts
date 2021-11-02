@@ -5,35 +5,35 @@ import {
   PrimaryGeneratedColumn,
   Column,
   CreateDateColumn,
-  UpdateDateColumn,
-  OneToMany,
+  // UpdateDateColumn,
+  // OneToMany,
 } from 'typeorm';
 
-@ObjectType()
+@ObjectType({ description: 'Book model' })
 @Entity('books')
 export class Book extends BaseEntity {
   @PrimaryGeneratedColumn()
-  @Field((type) => ID)
+  @Field(() => ID)
   id: number;
 
   @Column({
     nullable: false,
     length: 255,
   })
-  @Field()
+  @Field({ nullable: false, description: '本のタイトル' })
   title: string;
 
   @Column({
     nullable: false,
     length: 255,
   })
-  @Field()
+  @Field({ nullable: false, description: '著者' })
   author: string;
 
   @Column({
     nullable: false,
   })
-  @Field((type) => Int)
+  @Field(() => Int, { nullable: false, description: '価格(円)' })
   price: number;
 
   @CreateDateColumn({

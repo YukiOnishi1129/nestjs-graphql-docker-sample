@@ -2,10 +2,17 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+"""Book model"""
 type Book {
   id: ID!
+
+  """本のタイトル"""
   title: String!
+
+  """著者"""
   author: String!
+
+  """価格(円)"""
   price: Int!
   createdAt: DateTime!
 }
@@ -28,5 +35,5 @@ type Mutation {
 input NewBookInput {
   title: String!
   price: Int!
-  author: [String!]!
+  author: String!
 }
